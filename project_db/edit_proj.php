@@ -78,7 +78,9 @@ else {
     $sponsor_amount = $_POST["sponsor_amount"];
     $managing_org_id = $_POST["managing_org_id"];
     $managing_date = $_POST["managing_date"];
-    $field_name = $_POST["field_name"];
+    if (isset($_POST["field_name"])) {
+        $field_name = $_POST["field_name"];
+    }
 
     do {
         if ( empty($title) || empty($summary) || empty($start_date) || empty($end_date) || empty($evaluator_id)

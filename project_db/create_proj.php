@@ -34,7 +34,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $sponsor_amount = $_POST["sponsor_amount"];
     $managing_org_id = $_POST["managing_org_id"];
     $managing_date = $_POST["managing_date"];
-    $field_name = $_POST["field_name"];
+    if (isset($_POST["field_name"])) {
+        $field_name = $_POST["field_name"];
+    }
 
     do {
         if ( empty($title) || empty($summary) || empty($start_date) || empty($end_date) || empty($evaluator_id)
@@ -132,7 +134,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Περίληψη</label>
                 <div class="col-sm-6">
-                    <textarea form="curr" class="form-control" name="summary" value="<?php echo $summary; ?>"></textarea>
+                    <textarea form="curr" class="form-control" name="summary" value="<?php echo $summary; ?>"><?php echo $summary; ?></textarea>
                 </div>
             </div>
             <div class="row mb-3">
@@ -205,35 +207,35 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 <legend class="w-auto">Επιστημονικά Πεδία</legend>
                 <br>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΦΥΣΙΚΕΣ ΕΠΙΣΤΗΜΕΣ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΦΥΣΙΚΕΣ ΕΠΙΣΤΗΜΕΣ' <?php if(in_array("ΦΥΣΙΚΕΣ ΕΠΙΣΤΗΜΕΣ", $field_name)) echo "checked" ?>>
                 <label for='ΦΥΣΙΚΕΣ ΕΠΙΣΤΗΜΕΣ'>Φυσικές Επιστήμες</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΤΕΧΝΟΛΟΓΙΑ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΤΕΧΝΟΛΟΓΙΑ' <?php if(in_array("ΤΕΧΝΟΛΟΓΙΑ", $field_name)) echo "checked" ?>>
                 <label for='ΤΕΧΝΟΛΟΓΙΑ'>Τεχνολογία</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΙΑΤΡΙΚΗ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΙΑΤΡΙΚΗ' <?php if(in_array("ΙΑΤΡΙΚΗ", $field_name)) echo "checked" ?>>
                 <label for='ΙΑΤΡΙΚΗ'>Ιατρική</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΓΕΩΠΟΝΙΚΗ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΓΕΩΠΟΝΙΚΗ' <?php if(in_array("ΓΕΩΠΟΝΙΚΗ", $field_name)) echo "checked" ?>>
                 <label for='ΓΕΩΠΟΝΙΚΗ'>Γεωπονική</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΠΛΗΡΟΦΟΡΙΚΗ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΠΛΗΡΟΦΟΡΙΚΗ' <?php if(in_array("ΠΛΗΡΟΦΟΡΙΚΗ", $field_name)) echo "checked" ?>>
                 <label for='ΠΛΗΡΟΦΟΡΙΚΗ'>Πληροφορική</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΚΟΙΝΩΝΙΚΕΣ ΕΠΙΣΤΗΜΕΣ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΚΟΙΝΩΝΙΚΕΣ ΕΠΙΣΤΗΜΕΣ' <?php if(in_array("ΚΟΙΝΩΝΙΚΕΣ ΕΠΙΣΤΗΜΕΣ", $field_name)) echo "checked" ?>>
                 <label for='ΚΟΙΝΩΝΙΚΕΣ ΕΠΙΣΤΗΜΕΣ'>Κοινωνικές Επιστήμες</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΤΕΧΝΕΣ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΤΕΧΝΕΣ' <?php if(in_array("ΤΕΧΝΕΣ", $field_name)) echo "checked" ?>>
                 <label for='ΤΕΧΝΕΣ'>Τέχνες</label>
                 </div>
                 <div>
-                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΟΙΚΟΝΟΜΙΚΑ'>
+                <input type="checkbox" id="field_name[]" name="field_name[]" value='ΟΙΚΟΝΟΜΙΚΑ' <?php if(in_array("ΟΙΚΟΝΟΜΙΚΑ", $field_name)) echo "checked" ?>>
                 <label for='ΟΙΚΟΝΟΜΙΚΑ'>Οικονομικά</label>
                 </div>
             </fieldset>
