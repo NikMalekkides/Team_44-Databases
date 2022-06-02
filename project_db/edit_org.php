@@ -95,7 +95,7 @@ else {
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Client</h2>
+        <h2>Επεξεργασία Οργανισμού</h2>
 
         <?php
         if ( !empty($errorMessage) ) {
@@ -123,12 +123,12 @@ else {
                 </div>
             </div>
             <div class="form-group">
-                <label for="category">Κατηγορία ( Τρέχουσα Κατηγορία = <?php echo $category; ?> )</label>
+                <label for="category">Κατηγορία</label>
                 <select class="form-control" name="category">
-                    <option value="">---</option>
-                    <option value="University">Πανεπιστήμιο</option>
-                    <option value="Research Center">Ερευνητικό Κέντρο</option>
-                    <option value="Company">Εταιρεία</option>
+                    <option <?php if($category == "") echo "selected" ?> value="">---</option>
+                    <option <?php if($category == "University") echo "selected" ?> value="University">Πανεπιστήμιο</option>
+                    <option <?php if($category == "Research Center") echo "selected" ?> value="Research Center">Ερευνητικό Κέντρο</option>
+                    <option <?php if($category == "Company") echo "selected" ?> value="Company">Εταιρεία</option>
                 </select>
             </div>
             <br>

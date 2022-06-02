@@ -18,6 +18,8 @@
 
     <div class="container my-5">
         <h2>Έργα</h2>
+        <a class="btn btn-primary" href="/project_db/create_proj.php" role="button">Νέο Έργο</a>
+        <br>
         <table class="table">
             <thead>
                 <tr>
@@ -35,6 +37,7 @@
                   <th> Επιχορήγηση </th>
                   <th> ID Οργανισμού Διαχείρησης </th>
                   <th> Ημερομηνία Αναλαβής </th>
+                  <th> Ενέργεια </th>
                 </tr>
             </thead>
             <tbody>
@@ -67,6 +70,10 @@
                         <td> $row[sponsor_amount] </td>
                         <td> $row[managing_org_id] </td>
                         <td> $row[managing_date] </td>
+                        <td>
+                            <a class='btn btn-primary btn-sm' href='/project_db/edit_proj.php?id=$row[id]'> Edit </a>
+                            <a class='btn btn-danger btn-sm' href='/project_db/delete_proj.php?id=$row[id]'> Delete </a>
+                        </td>
                     </tr>
                     ";
                 }

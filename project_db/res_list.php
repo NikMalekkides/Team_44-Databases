@@ -18,6 +18,7 @@
 
     <div class="container my-5">
         <h2>Ερευνητές</h2>
+        <a class="btn btn-primary" href="/project_db/create_res.php" role="button">Νέος Ερευνητής</a>
         <br>
         <table class="table">
             <thead>
@@ -29,6 +30,7 @@
                     <th> Ημερομηνία Γέννησης </th>
                     <th> Φύλο </th>
                     <th> Ημερομηνία Πρόσληψης </th>
+                    <th> Ενέργεια </th>
                 </tr>
             </thead>
             <tbody>
@@ -54,6 +56,10 @@
                         <td>$row[date_of_birth]</td>
                         <td>$row[sex]</td>
                         <td>$row[works_date]</td>
+                        <td>
+                            <a class='btn btn-primary btn-sm' href='/project_db/edit_res.php?id=$row[id]'> Edit </a>
+                            <a class='btn btn-danger btn-sm' href='/project_db/delete_res.php?id=$row[id]'> Delete </a>
+                        </td>
                     </tr>
                     ";
                 }

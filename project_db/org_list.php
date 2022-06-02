@@ -60,6 +60,7 @@
                         <td>$row[city]</td>
                         <td>
                             <a class='btn btn-primary btn-sm' href='/project_db/edit_org.php?id=$row[id]'> Edit </a>
+                            <a class='btn btn-danger btn-sm' href='/project_db/delete_org.php?id=$row[id]'> Delete </a>
                         </td>
                     </tr>
                     ";
